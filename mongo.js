@@ -19,11 +19,11 @@ const personSchema = new mongoose.Schema({
 
 const Person = mongoose.model('Person', personSchema)
 
-Person.find({}).then(result=>{
-    result.forEach(person=>{
-        console.log(person)
-    })
-    
+Person.find({}).then(result => {
+  result.forEach(person => {
+    console.log(person)
+  })
+
 })
 
 const person = new Person({
@@ -31,6 +31,7 @@ const person = new Person({
   number: puhelinnumero,
 })
 
+// eslint-disable-next-line no-unused-vars
 person.save().then(response => {
   console.log(`Added ${puhelinnimi} to phonebook`)
   mongoose.connection.close()
